@@ -1,0 +1,34 @@
+Distribution after augmentation and balancing
+---------------------------------------------
+CT-Abstract
+  Background                 198
+  Objective                  198
+  Methods                    198
+  Results                    198
+  Limitations                 77
+  Conclusions                198
+  subtotal                  1067
+CT-Introduction
+  Problem Statement          200
+  Research Objectives        200
+  Context                    200
+  subtotal                   600
+CT-Planning
+  Goals                      199
+  Experimental Units         199
+  Experimental Material      199
+  Tasks                      199
+  Hypotheses                 199
+  Parameters                 199
+  Independent Variables      199
+  Dependent Variables        199
+  Experiment Design          199
+  Procedure                  199
+  Analysis Procedure         199
+  subtotal                  2189
+CT-Conclusion
+  Summary                    200
+  Impact                      42
+  Future Work                200
+  subtotal                   442
+TOTAL                       4298

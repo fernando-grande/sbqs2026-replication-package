@@ -1,0 +1,24 @@
+﻿task,label,display_name,target,originals,synthetic_available,synthetic_used,final,reached_target
+CT-Abstract,Background,Background,198,197,1,1,198,yes
+CT-Abstract,Objective,Objective,198,198,0,0,198,yes
+CT-Abstract,Methods,Methods,198,193,5,5,198,yes
+CT-Abstract,Results,Results,198,154,44,44,198,yes
+CT-Abstract,Limitations,Limitations,198,11,66,66,77,no
+CT-Abstract,Conclusions,Conclusions,198,70,128,128,198,yes
+CT-Introduction,ProblemStatement,Problem Statement,200,198,2,2,200,yes
+CT-Introduction,ResearchObjectives,Research Objectives,200,197,3,3,200,yes
+CT-Introduction,Context,Context,200,200,0,0,200,yes
+CT-Planning,Goals,Goals,199,192,7,7,199,yes
+CT-Planning,ExperimentalUnits,Experimental Units,199,196,3,3,199,yes
+CT-Planning,ExperimentalMaterial,Experimental Material,199,199,0,0,199,yes
+CT-Planning,Tasks,Tasks,199,96,104,103,199,yes
+CT-Planning,Hypotheses,Hypotheses,199,84,115,115,199,yes
+CT-Planning,Parameters,Parameters,199,44,155,155,199,yes
+CT-Planning,IndependentVariables,Independent Variables,199,181,18,18,199,yes
+CT-Planning,DependentVariables,Dependent Variables,199,180,19,19,199,yes
+CT-Planning,ExperimentDesign,Experiment Design,199,141,58,58,199,yes
+CT-Planning,Procedure,Procedure,199,197,2,2,199,yes
+CT-Planning,AnalysisProcedure,Analysis Procedure,199,82,118,117,199,yes
+CT-Conclusion,Summary,Summary,200,200,0,0,200,yes
+CT-Conclusion,Impact,Impact,200,6,36,36,42,no
+CT-Conclusion,FutureWork,Future Work,200,174,26,26,200,yes

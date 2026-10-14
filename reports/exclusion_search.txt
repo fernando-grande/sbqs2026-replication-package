@@ -1,0 +1,14 @@
+Exclusion search (input corpus only; no metric is used)
+
+Excess over Table 1 with all 211 studies: {'Background': 11, 'Objective': 11, 'Methods': 12, 'Results': 10, 'Limitations': 0, 'Conclusions': 4, 'ProblemStatement': 11, 'ResearchObjectives': 11, 'Context': 11, 'Goals': 11, 'ExperimentalUnits': 11, 'ExperimentalMaterial': 11, 'Tasks': 7, 'Hypotheses': 6, 'Parameters': 1, 'IndependentVariables': 11, 'ExperimentDesign': 9, 'Procedure': 11, 'AnalysisProcedure': 4, 'Summary': 11, 'Impact': 1, 'FutureWork': 9}
+Free choice of 11 out of 211 is impossible: classes whose excess exceeds 11 (a study holds at most one cell per class): {'Methods': 12}
+
+Documented exclusions kept: [11, 14, 25, 27, 45, 59, 76, 87]
+Excess over Table 1 with the remaining 203 studies: {'Background': 4, 'Objective': 3, 'Methods': 4, 'Results': 3, 'Limitations': 0, 'Conclusions': 2, 'ProblemStatement': 4, 'ResearchObjectives': 3, 'Context': 3, 'Goals': 3, 'ExperimentalUnits': 3, 'ExperimentalMaterial': 3, 'Tasks': 2, 'Hypotheses': 1, 'Parameters': 0, 'IndependentVariables': 3, 'ExperimentDesign': 2, 'Procedure': 3, 'AnalysisProcedure': 1, 'Summary': 3, 'Impact': 0, 'FutureWork': 2}
+Trios matching every class except +1 in ['Background', 'Methods', 'ProblemStatement']: 293
+Studies whose PDF text could not be processed (0 anchored spans): [50, 174]
+Trios containing such a study: 1
+Chosen trio (rule: most PDF failures, then smallest): (151, 174, 205)
+  151: Supporting distributed product configuration by integrating heterogeneous variability modeling approaches 
+  174: XTraQue: Traceability for product line systems
+  205: Similarity distance measure and prioritization algorithm for test case prioritization in software product line testing

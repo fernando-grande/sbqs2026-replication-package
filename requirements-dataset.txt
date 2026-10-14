@@ -1,0 +1,9 @@
+# Rebuilding the dataset (run_extract.py, run_dataset.py). Not needed to
+# verify or evaluate (requirements-eval.txt). The Gemini answers are in cache/,
+# so the API (google-genai) is only needed for studies that are not cached.
+#     pip install -r requirements-dataset.txt
+pandas==3.0.6
+numpy==2.5.2
+openpyxl>=3.1
+pymupdf>=1.24
+google-genai>=1.0

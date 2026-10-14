@@ -1,0 +1,14 @@
+Full-text PDFs of the studies (not distributed: copyrighted).
+
+To rebuild the grounded excerpts (run_extract.py), place here one PDF per
+study of corpus/catalog.csv. The file name is the title of the study;
+punctuation, accents, letter case and "&" versus "and" are ignored when
+matching. Subfolders are not read.
+
+run_extract.py then:
+1. matches each PDF with a study (reports/pdf_match.csv);
+2. extracts the full text with PyMuPDF (data/extract/texts/);
+3. with --llm, asks Gemini for the literal excerpt of each filled field of
+   the spreadsheet (one request per study; answers cached in cache/);
+4. keeps a span only if it is found verbatim in the PDF text;
+5. writes data/extract/grounded_instances.csv and the reports.

@@ -1,0 +1,58 @@
+Extraction summary
+------------------
+grounding per study: cache=199, no-pdf=1
+same span under two labels of one study: 35 instances reverted to the spreadsheet text (span kept by the label it resembles most)
+
+span anchoring per class (text_source=pdf only when the span is exact, compact or gapped)
+class                       n   pdf        exact      compact       gapped      partial      missing        empty not-grounded       no-pdf  sheet in pdf
+Background                197   195          115           78            3            0            1            0            0            0           171
+Objective                 198   193          135           57            3            0            2            0            0            1           174
+Methods                   193   169          126           48            2            0            3            0           13            1           167
+Results                   154   153          117           35            1            0            1            0            0            0           139
+Limitations                11    11            7            2            2            0            0            0            0            0             8
+Conclusions                70    69           45           21            3            0            1            0            0            0            62
+Problem Statement         198   195           84           82           29            0            2            0            0            1           145
+Research Objectives       197   192          103           78           12            0            3            0            0            1           162
+Context                   200   196           77           81           38            0            3            0            0            1           146
+Goals                     192   181           97           69           15            2            7            0            1            1           134
+Experimental Units        196   155           86           57           14            3           12            0           23            1           103
+Experimental Material     199   175           82           62           32            7            9            0            6            1            51
+Tasks                      96    88           40           35           14            2            5            0            0            0            45
+Hypotheses                 84    79           37           31           11            2            3            0            0            0            37
+Parameters                 44    40           20            9           11            0            4            0            0            0            16
+Independent Variables     181    89           68           26            7            2           30            0           47            1            15
+Dependent Variables       180   104           73           31            7            3           26            0           39            1            13
+Experiment Design         141     0            0            0            0            0            0            0          140            1            26
+Procedure                 197   179           51           61           68            8            8            0            0            1            54
+Analysis Procedure         82    75           28           23           24            2            3            0            2            0            36
+Summary                   200   193           58           89           46            0            6            0            0            1           124
+Impact                      6     5            4            0            1            1            0            0            0            0             4
+Future Work               174   170           83           77           10            0            3            0            0            1           146
+TOTAL                    3390  2906
+
+Comparison with the paper (Table 1, column Before)
+class                     here  paper  diff
+Background                 197    196    +1
+Objective                  198    198    +0
+Methods                    193    192    +1
+Results                    154    154    +0
+Limitations                 11     11    +0
+Conclusions                 70     71    -1
+Problem Statement          198    197    +1
+Research Objectives        197    197    +0
+Context                    200    200    +0
+Goals                      192    192    +0
+Experimental Units         196    196    +0
+Experimental Material      199    199    +0
+Tasks                       96     96    +0
+Hypotheses                  84     84    +0
+Parameters                  44     45    -1
+Variables (studies)        185    187    -2
+Experiment Design          141    141    +0
+Procedure                  197    197    +0
+Analysis Procedure          82     83    -1
+Summary                    200    200    +0
+Impact                       6      8    -2
+Future Work                174    174    +0
+TOTAL                     3214   3218    -4
+(the paper counts Variables once per study, before the split into Independent/Dependent Variables; its total uses that single count)

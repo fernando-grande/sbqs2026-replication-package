@@ -1,0 +1,24 @@
+﻿task,label,display_name,count
+CT-Abstract,Background,Background,197
+CT-Abstract,Objective,Objective,198
+CT-Abstract,Methods,Methods,193
+CT-Abstract,Results,Results,154
+CT-Abstract,Limitations,Limitations,11
+CT-Abstract,Conclusions,Conclusions,70
+CT-Introduction,ProblemStatement,Problem Statement,198
+CT-Introduction,ResearchObjectives,Research Objectives,197
+CT-Introduction,Context,Context,200
+CT-Planning,Goals,Goals,192
+CT-Planning,ExperimentalUnits,Experimental Units,196
+CT-Planning,ExperimentalMaterial,Experimental Material,199
+CT-Planning,Tasks,Tasks,96
+CT-Planning,Hypotheses,Hypotheses,84
+CT-Planning,Parameters,Parameters,44
+CT-Planning,IndependentVariables,Independent Variables,181
+CT-Planning,DependentVariables,Dependent Variables,180
+CT-Planning,ExperimentDesign,Experiment Design,141
+CT-Planning,Procedure,Procedure,197
+CT-Planning,AnalysisProcedure,Analysis Procedure,82
+CT-Conclusion,Summary,Summary,200
+CT-Conclusion,Impact,Impact,6
+CT-Conclusion,FutureWork,Future Work,174

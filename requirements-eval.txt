@@ -1,0 +1,8 @@
+# Verification and evaluation only (no GPU, no torch): verify.py, run_eval.py
+# and the analysis/ scripts recompute every metric, test and report from the
+# versioned predictions. Tested in a fresh virtual environment with exactly
+# these packages on Windows (Python 3.14) and on Linux (Python 3.12).
+#     pip install -r requirements-eval.txt
+pandas==3.0.6
+numpy==2.5.2
+scipy==1.18.1

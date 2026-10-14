@@ -1,0 +1,147 @@
+{
+  "status": "completed",
+  "mode": "stl",
+  "encoder": "distilbert",
+  "task": "CT-Planning",
+  "signature": {
+    "model_name": "distilbert/distilbert-base-uncased",
+    "model_revision": "12040accade4e8a0f71eabdb258fecc2e7e948be",
+    "attn_implementation": "eager",
+    "deterministic": "strict",
+    "gradient_checkpointing": false,
+    "hyperparameters": {
+      "epochs": 10,
+      "batch_size": 16,
+      "learning_rate": 2e-05,
+      "dropout": 0.1,
+      "weight_decay": 0.01,
+      "warmup_ratio": 0.1,
+      "max_grad_norm": 1.0,
+      "max_length": 256
+    },
+    "seed_base": 42,
+    "instances_csv_sha256": "664e1fed540bc24f62795c8e7f3ca56e446eceff80660932c28575bf41cf2655",
+    "folds_csv_sha256": "19a29d882ec900c2cb5df6888df9491b5ff55a05e14a642c266499e1baa485f5"
+  },
+  "seed_rule": "SEED + fold, reset at the start of every fold",
+  "smoke_test": false,
+  "instances": 2189,
+  "environment": {
+    "code_sha256": "8eb914b7ceec519d7e16fe26032d8f63ba4661a482264842ef921aa427d2cd5b",
+    "python": "3.12.3",
+    "platform": "Linux-7.0.0-29-generic-x86_64-with-glibc2.39",
+    "torch": "2.13.0+cu132",
+    "transformers": "5.17.0",
+    "numpy": "2.5.2",
+    "pandas": "3.0.6",
+    "cuda": "13.2",
+    "cudnn": 92000,
+    "gpu": "NVIDIA GeForce RTX 4060"
+  },
+  "folds_done": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "memory": {
+    "1": {
+      "max_allocated_mib": 2741.0,
+      "max_reserved_mib": 2804.0,
+      "allocated_mib": 1076.8,
+      "reserved_mib": 2804.0,
+      "allocated_after_cleanup_mib": 64.0
+    },
+    "2": {
+      "max_allocated_mib": 2741.0,
+      "max_reserved_mib": 2806.0,
+      "allocated_mib": 1076.8,
+      "reserved_mib": 2806.0,
+      "allocated_after_cleanup_mib": 64.0
+    },
+    "3": {
+      "max_allocated_mib": 2741.0,
+      "max_reserved_mib": 2804.0,
+      "allocated_mib": 1076.8,
+      "reserved_mib": 2804.0,
+      "allocated_after_cleanup_mib": 64.0
+    },
+    "4": {
+      "max_allocated_mib": 2741.0,
+      "max_reserved_mib": 2804.0,
+      "allocated_mib": 1076.8,
+      "reserved_mib": 2804.0,
+      "allocated_after_cleanup_mib": 64.0
+    },
+    "5": {
+      "max_allocated_mib": 2741.0,
+      "max_reserved_mib": 2804.0,
+      "allocated_mib": 1076.8,
+      "reserved_mib": 2804.0,
+      "allocated_after_cleanup_mib": 64.0
+    }
+  },
+  "epoch_losses": {
+    "1": [
+      2.153831203049476,
+      0.9811240489329767,
+      0.4900258752184177,
+      0.30139802751738,
+      0.18888611777113118,
+      0.12519582292628945,
+      0.0838879043697764,
+      0.06291332987453276,
+      0.055617104310098045,
+      0.04232134873372152
+    ],
+    "2": [
+      2.1517932295799254,
+      0.948024428432638,
+      0.4597695667635311,
+      0.27576041760092435,
+      0.17190502042120154,
+      0.11481254931369966,
+      0.07893756650896235,
+      0.06160029213113541,
+      0.044022579554637724,
+      0.038421358362856234
+    ],
+    "3": [
+      2.145709833231839,
+      0.950999042391777,
+      0.48364793170582165,
+      0.26846059134060685,
+      0.1697663036767732,
+      0.10757427660917694,
+      0.07559267566962675,
+      0.04587733738801696,
+      0.043350111777809536,
+      0.02994401648809964
+    ],
+    "4": [
+      2.1386110826369817,
+      0.9543711824701466,
+      0.5004462069327679,
+      0.2987420543208035,
+      0.1909930173717781,
+      0.13309762233851152,
+      0.0956711970235503,
+      0.07032165238890078,
+      0.060249827827813976,
+      0.04717422423696299
+    ],
+    "5": [
+      2.1312646350345097,
+      0.9225159856650207,
+      0.46316000389623213,
+      0.27195654144963705,
+      0.16470293274468129,
+      0.10533121002519184,
+      0.08059738507611794,
+      0.060954860461926136,
+      0.044457673569218266,
+      0.03766477925635807
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+﻿study_id,title,year,reason,evidence,confirmed
+11,A Preliminary Study on the Effects of Working with a Testing Process in Software Product Line Projects,2012,full text not retrievable,full text absent from the files of the original study,yes
+14,A Set of Inspection Techniques on Software Product Line Models,2012,full text not retrievable,full text absent from the files of the original study,yes
+25,An approach to software artefact specification for supporting product line systems,2008,full text not retrievable,full text absent from the files of the original study,yes
+27,An evolutionary methodology for optimized feature selection in software product lines,2014,full text not retrievable,full text absent from the files of the original study,yes
+45,Avoiding redundant testing in application engineering,2010,full text not retrievable,full text absent from the files of the original study,yes
+59,Configuration knowledge of software product lines: A comprehensibility study,2011,full text not retrievable,full text absent from the files of the original study,yes
+76,Empirical Validation of Variability-based Complexity Metrics for Software Product Line Architecture,2012,full text not retrievable,full text absent from the files of the original study,yes
+87,Experimenting with the comprehension of feature-oriented and UML-based core assets,2011,full text not retrievable,full text absent from the files of the original study,yes
+151,Supporting distributed product configuration by integrating heterogeneous variability modeling approaches ,,not identifiable from the paper; chosen to match Table 1 (REPRODUCTION.md),member of the only Table 1 compatible trio that contains a PDF processing failure,no
+174,XTraQue: Traceability for product line systems,,not identifiable from the paper; chosen to match Table 1 (REPRODUCTION.md),PDF text unreadable: no grounded span anchored; only such study in a Table 1 compatible trio,no
+205,Similarity distance measure and prioritization algorithm for test case prioritization in software product line testing,,not identifiable from the paper; chosen to match Table 1 (REPRODUCTION.md),member of the only Table 1 compatible trio that contains a PDF processing failure,no

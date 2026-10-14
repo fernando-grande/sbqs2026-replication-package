@@ -1,0 +1,34 @@
+Distribution before augmentation
+--------------------------------
+CT-Abstract
+  Background                 197
+  Objective                  198
+  Methods                    193
+  Results                    154
+  Limitations                 11
+  Conclusions                 70
+  subtotal                   823
+CT-Introduction
+  Problem Statement          198
+  Research Objectives        197
+  Context                    200
+  subtotal                   595
+CT-Planning
+  Goals                      192
+  Experimental Units         196
+  Experimental Material      199
+  Tasks                       96
+  Hypotheses                  84
+  Parameters                  44
+  Independent Variables      181
+  Dependent Variables        180
+  Experiment Design          141
+  Procedure                  197
+  Analysis Procedure          82
+  subtotal                  1592
+CT-Conclusion
+  Summary                    200
+  Impact                       6
+  Future Work                174
+  subtotal                   380
+TOTAL                       3390

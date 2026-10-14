@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+message: "If you use this package, please cite the paper and this replication package."
+title: "Replication package: Using Single- and Multi-Task Transformers for Classifying Controlled Experiment Protocols in Software Engineering"
+type: software
+authors:
+  - family-names: Grande
+    given-names: Fernando S.
+    affiliation: State University of Maringá (UEM)
+  - family-names: Cordeiro
+    given-names: André F. R.
+    affiliation: State University of Maringá (UEM)
+  - family-names: OliveiraJr
+    given-names: Edson
+    affiliation: State University of Maringá (UEM)
+doi: 10.5281/zenodo.22760606
+repository-code: "https://github.com/fernando-grande/sbqs2026-replication-package"
+license: MIT
+date-released: 2026-10-14
+preferred-citation:
+  type: conference-paper
+  title: "Using Single- and Multi-Task Transformers for Classifying Controlled Experiment Protocols in Software Engineering: Initial Investigation"
+  authors:
+    - family-names: Grande
+      given-names: Fernando S.
+    - family-names: Cordeiro
+      given-names: André F. R.
+    - family-names: OliveiraJr
+      given-names: Edson
+  collection-title: "Proceedings of the Brazilian Symposium on Software Quality (SBQS 2026)"
+  year: 2026

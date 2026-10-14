@@ -1,0 +1,17 @@
+# Training / evaluation machine (GPU). These are the versions recorded in the
+# run_info.json of every published run (Python 3.12.3, Linux, RTX 4060,
+# CUDA runtime 13.2). Install torch first, from the CUDA 13.2 index:
+#     pip install torch==2.13.0 --index-url https://download.pytorch.org/whl/cu132
+# then:
+#     pip install -r requirements-train.txt
+# The full environment of the published runs (every transitive package) is in
+# reports/train_environment.txt (pip freeze on the training machine); to
+# rebuild it exactly, use that file as a constraints file:
+#     pip install -r requirements-train.txt -c reports/train_environment.txt
+# Bit-identical predictions are expected only with the same GPU, driver and
+# library versions (REPRODUCTION.md, "Determinism and memory").
+transformers==5.17.0
+numpy==2.5.2
+pandas==3.0.6
+scipy>=1.11
+tqdm>=4.66

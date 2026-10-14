@@ -1,0 +1,10 @@
+﻿study_id,source_column,text
+13,34,Five experiments:
+24,34,Indenpendent variable = Type of feature: Cf (commom feature) and Vf (Variable feature)
+51,34,A:
+56,34,RQ1:
+73,34,5.1 First round:
+139,34,"independet variable = Configuration ""is the set of selected features"""
+181,34,Approach; Complexity; Test selection Time (Sel-Time); Number of covered features (NCF); Feature coverage (FC); Number of selected test cases (NST); Percentage of selected test cases (PST); NCF efficiency (Eff_F); NST efficiency (Eff_TC);
+190,34,Integration Effort (IE); Rate of Correctly Integrated Features (CIR); Experience Level of Participants;
+207,34,Indenpendent variable = SMTIBEA and state-of-the-art (SATIBEA)

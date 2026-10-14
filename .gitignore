@@ -1,0 +1,27 @@
+__pycache__/
+*.pyc
+.venv/
+.env
+*.log
+
+# PDFs of the studies are copyrighted and not distributed (corpus/pdfs/HOW_TO_ADD.txt).
+corpus/pdfs/*.pdf
+
+# Intermediate outputs of run_extract.py and run_dataset.py; only the
+# grounded excerpts and the training tables are versioned.
+data/*
+!data/extract/
+data/extract/*
+!data/extract/grounded_instances.csv
+!data/07_training/
+data/07_training/*
+!data/07_training/instances.csv
+!data/07_training/folds.csv
+
+# Training outputs: only the predictions and run_info.json are versioned;
+# every metric is recomputed from them by run_eval.py.
+metrics/**
+!metrics/**/
+!metrics/**/fold*_predictions.csv
+!metrics/**/run_info.json
+metrics_smoke/

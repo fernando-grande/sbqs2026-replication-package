@@ -1,0 +1,5 @@
+task,stl_published_best,stl_reimpl_best,stl_tolerance,a_stl,mtl_published_best,mtl_reimpl_best,mtl_tolerance,a_mtl,a,delta_published,delta_reimpl,b_tolerance,b_rule,b,welch_p,c,cells_within_tolerance,level
+CT-Abstract,roberta 81.48,roberta 78.46,2.0,False,scibert 81.79,scibert 78.66,2.0,False,False,0.3100000000000023,0.1975570076148614,2.0,tie,True,0.9213818141433086,True,2/10,partial reproduction
+CT-Introduction,scibert 89.84,scibert 88.81,2.0,True,scibert 88.80,distilbert 88.79,2.0,True,True,-1.0400000000000063,-0.017263465705724457,2.0,tie,True,0.9894877574970234,True,9/10,partial reproduction
+CT-Planning,scibert 65.95,scibert 79.08,2.0,False,scibert 64.91,scibert 79.41,2.0,False,False,-1.0400000000000063,0.32636749195935977,2.0,tie,True,0.8627647773479084,True,0/10,partial reproduction
+CT-Conclusion,roberta 98.31,bert 74.57,2.0,False,bert 97.89,roberta 76.61,2.0,False,False,-0.4200000000000017,2.0416547369797087,2.0,tie,False,0.8510594657803374,True,0/10,partial reproduction
