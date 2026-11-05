@@ -6,11 +6,86 @@ OliveiraJr; SBQS 2026).
 
 ## Status
 
-This package is an **independent re-implementation** of the study, built
-from the paper, the undergraduate thesis it is based on and the source
-spreadsheet. The tables of the paper are the results of the original runs;
-this package does not replace them. This document records how the
-re-implementation was built and how far it reproduces them.
+This package is an **independent re-implementation** of the study. It was
+built from:
+- the paper;
+- the undergraduate thesis the paper is based on;
+- the source spreadsheet;
+- the data-preparation rules of the original study.
+
+The tables of the paper are the results of the original runs; this package
+does not replace them. This document records how the re-implementation was
+built and how far it reproduces them.
+
+## Provenance: original versus reconstructed
+
+### Availability of the original materials
+
+| Material | Available | Where |
+|---|---|---|
+| Source spreadsheet of the mapping study (labels, 211 studies) | Yes, unchanged | `corpus/source.xlsx`, a copy of https://doi.org/10.5281/zenodo.3893302 |
+| Published results: Table 1 counts; means and SDs per encoder, task and mode; Welch p-values | Yes | The paper (`paper/author_version.pdf`) |
+| Data-preparation scripts of the original study: spreadsheet extraction with its empty-cell rule; augmentation prompt and Gemini model | Not distributed. Their rules are re-implemented and cited below | Authors' private repository |
+| List of the PDFs held by the original study | Used only to identify 8 of the 11 exclusions | `corpus/excluded_studies.csv` (`evidence` column) |
+| Original dataset files (instances, folds), Gemini outputs of the original runs | **No** | — |
+| Original training and evaluation implementation | **No** | — |
+| Original per-fold scores, predictions, checkpoints, logs | **No**: the paper reports means and standard deviations only | — |
+
+As a consequence, no original execution record (log, per-fold score,
+prediction) is available to calibrate or check the re-implementation. The
+only records of the original execution are the published numbers.
+
+### Files of this package
+
+| File | Status |
+|---|---|
+| `corpus/source.xlsx` | **Original** (third-party, unchanged) |
+| `corpus/catalog.csv` | Derived from the spreadsheet (title, year, venue, inclusion) |
+| `corpus/excluded_studies.csv` | 8 exclusions **from the original study's files** (`confirmed = yes`); 3 **reconstructed** from the Table 1 counts (`confirmed = no`; see "Corpus" below) |
+| `cache/*.jsonl` | **Produced by the re-implementation** (new Gemini requests, gemini-2.5-flash), not the answers of the original runs |
+| `data/extract/grounded_instances.csv` | **Reconstructed** (grounding of the re-implementation) |
+| `data/07_training/instances.csv` | **Reconstructed**. The class counts after augmentation equal Table 1; the texts are not the original ones (not available) |
+| `data/07_training/folds.csv` | **Reconstructed** (grouped by study, stratified by class, seed 42). The original fold assignment is not available |
+| `metrics/`, `reports/` | **Produced by the re-implementation**, except the published values that `analysis/` compares against, which are copied from the paper |
+
+### Source of each decision
+
+| Decision | Value used here | Source |
+|---|---|---|
+| Corpus of 200 studies; 8 exclusions | Studies whose full text is absent from the original study's files | Original study's files |
+| 3 further exclusions | Studies 151, 174, 205 | **Inferred** from the "Before" counts of Table 1 (rule below) |
+| Empty-cell rule | Only `""`, `"---"`, `"nan"` are empty | Original extraction script; reproduces Impact = 8 and Parameters = 45 of Table 1 |
+| 22 columns to 23 classes; Variables split into Independent and Dependent | As in the paper | Paper (Section 3.2.2) |
+| Grounding model | gemini-2.5-flash | Paper (Gemini API) and original scripts (model name) |
+| Span verification against the PDF text | Kept only if found verbatim; otherwise the spreadsheet text | **Added here.** The paper states that the original pipeline did not verify spans (Section 6) |
+| Augmentation prompt | AugGPT prompt, verbatim | Original augmentation script |
+| Number of paraphrases | At most 6 per excerpt, only as many as the balancing needs | **Inferred.** The paper generates 6 per excerpt and then caps each class; both give the counts of Table 1 |
+| Balancing target | Each class capped at the largest original class of its task | Paper (Section 3.2.3) |
+| Folds | 5, stratified by class, grouped by study, the same for STL and MTL | Paper (Sections 3.2.3 and 3.4). Grouping in the original runs is uncertain (Section 6 of the paper) |
+| Hyperparameters | 10 epochs, batch 16, AdamW 2e-5, weight decay 0.01, warmup 10%, dropout 0.1, clipping 1.0 | Paper (Section 3.4) |
+| MTL loss | Uncertainty weighting | Paper (Section 3.3) |
+| Class weights | In STL only | Thesis |
+| Learning rate of the uncertainty parameters | Same as the encoder | **Not specified; fixed here** |
+| Maximum length | 256 tokens | **Not specified; fixed here** |
+| Attention implementation | Eager | **Not specified; fixed here** (determinism) |
+| Gradient checkpointing | DeBERTa only | **Not specified; fixed here** (8 GB GPU) |
+| Checkpoint revisions, seeds | Pinned (`pipeline/config.py`); seed 42 + fold | **Not specified; fixed here** |
+| Evaluation | Every test item of a fold, originals and paraphrases; macro F1 per task | Paper (Section 3.5) |
+
+### Differences that affect comparability
+
+| Aspect | Original study (paper) | This package | Effect on comparability |
+|---|---|---|---|
+| **Grounding** | Gemini spans used without substring verification (Section 6) | A span is kept only if found verbatim in the PDF text; otherwise the spreadsheet text is kept. 2,906 of the 3,390 original excerpts come from the PDF and 484 from the spreadsheet (`reports/span_verification.csv`) | The instance texts differ from the original ones, which are not available, so the size of the effect cannot be measured. It is concentrated in CT-Planning. Experiment Design keeps the spreadsheet text in all 141 excerpts, a closed vocabulary that is easy to classify (SciBERT STL F1 94.0 here, 67.6 published). Independent and Dependent Variables reach 84.7 and 83.3 here, against 36.0 and 52.6 published |
+| **Grouping by study** | Paraphrases bound to their study's group (Section 3.2.3). Section 6 acknowledges that test folds may contain paraphrases of training excerpts | Strict: a study, its excerpts and their paraphrases are always in the same fold | Strict grouping lowers the classes with very few originals, each expanded by paraphrases: Impact (6 originals; STL F1 31.6 here, mean of 5 encoders, against 88.8 to 94.1 published) and Limitations (11 originals; 67.8 against 91.0 to 95.0). This explains most of the CT-Conclusion and part of the CT-Abstract gap. The published scores of these classes should be read as optimistic |
+| **Loss weighting** | Uncertainty weighting in MTL; class weights not stated in the paper | Uncertainty weighting in MTL; class weights in STL (thesis) | Same choice for every encoder, so the STL–MTL comparison inside this package is consistent. The effect relative to the paper was not tested |
+| **Preprocessing** | Empty-cell rule and marker normalisation of the original scripts; maximum length not stated | Same empty-cell rule; 256 tokens | Excerpts longer than 256 tokens are truncated, mostly in Procedure and Summary. The effect relative to the paper was not tested |
+| **Augmentation** | 6 paraphrases per excerpt, then capping (Section 3.2.3) | Only the paraphrases the balancing needs (at most 6 per excerpt) | The class totals are identical, but which excerpts have paraphrases, and how many, may differ. This changes the composition of the test folds |
+| **Corpus** | 200 studies, 11 exclusions (3 not identifiable) | 3 exclusions inferred from Table 1 | "Before" differs by +1 in three classes (3 cells of 3,218); after augmentation the counts are identical. Small expected effect |
+
+Comparability is therefore highest for the conclusion of the paper (STL
+versus MTL inside the same pipeline), and lower for the absolute scores of
+individual classes and tasks.
 
 ## Corpus: 200 studies
 
@@ -37,8 +112,13 @@ summary in `reports/exclusion_search.{csv,txt}`.
 Resulting corpus (`reports/table1_comparison.csv`):
 
 - Before augmentation: 3,221 cells by the original rule versus 3,218
-  published (the +1 in three classes above); 3,218 original excerpts enter the
-  dataset, because cells such as `"----"` hold no text.
+  published (the +1 in three classes above). Like the "Total" of Table 1,
+  these counts include the Variables cell once.
+- Of the 3,221 cells, 7 hold no text (for example `"----"`), so 3,214 cells
+  enter the dataset. The Variables cell of 185 studies is split into one
+  Independent and one Dependent Variables excerpt (181 and 180, because some
+  cells hold only one of them). This gives the **3,390 original excerpts** of
+  `instances.csv`, plus 908 paraphrases.
 - After augmentation and balancing: **4,298 instances, identical to Table 1 in
   every class** (Limitations 77 = 11 x 7; Impact 42 = 6 x 7).
 
